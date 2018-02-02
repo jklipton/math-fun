@@ -61,7 +61,7 @@ function multiply(a,b,c){ //eslint-disable-line
         return [numProduct, 'The product of ' + a + ' and ' + b + ' is ' + numProduct + '.'];
     } else {
         const numProduct = a * b * c;
-        return [numProduct, 'The product of ' + a + ', ' + b + ' and ' + c + ' is ' + numSum + '.'];
+        return [numProduct, 'The product of ' + a + ', ' + b + ' and ' + c + ' is ' + numProduct + '.'];
     }
 }
 
@@ -94,11 +94,15 @@ IMPORTANT DETAIL! IMPORTANT DETAIL! IMPORTANT DETAIL!
 
 // Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
-    
+    const numSum = sum(a,b,c);
+    const numProduct = multiply(a,b,c);
+    return [numSum[0], numProduct[0], a + ' and ' + b + ' and ' + c + ' sum to ' + numSum[0] + '.','The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + numProduct[0] + '.']    
 }
 
+
+
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply();
 
 
 /////////////////////////////////////

@@ -26,9 +26,15 @@ the values that were input into the function:
 */
 
 // Write your code here
-function sum(num,num2){ //eslint-disable-line
-    const numSum = num + num2;
-    return [numSum, 'The sum of ' + num + ' and ' + num2 + ' is ' + numSum + '.'];
+function sum(a,b,c){ //eslint-disable-line
+    if (c === undefined) {
+        c= 0;
+        const numSum = a + b + c;
+        return [numSum, 'The sum of ' + a + ' and ' + b + ' is ' + numSum + '.'];
+    } else {
+        const numSum = a + b + c;
+        return [numSum, 'The sum of ' + a + ', ' + b + ' and ' + c + ' is ' + numSum + '.'];
+    }
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -47,9 +53,16 @@ were input into the function:
 */
 
 // Write your code here
-function multiply(a,b){ //eslint-disable-line
-    const product = a * b;
-    return [product, 'The product of ' + a + ' and ' + b + ' is ' + product + '.'];
+
+function multiply(a,b,c){ //eslint-disable-line
+    if (c === undefined) {
+        c= 1;
+        const numProduct = a * b * c;
+        return [numProduct, 'The product of ' + a + ' and ' + b + ' is ' + numProduct + '.'];
+    } else {
+        const numProduct = a * b * c;
+        return [numProduct, 'The product of ' + a + ', ' + b + ' and ' + c + ' is ' + numProduct + '.'];
+    }
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -81,11 +94,15 @@ IMPORTANT DETAIL! IMPORTANT DETAIL! IMPORTANT DETAIL!
 
 // Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
-    
+    const numSum = sum(a,b,c);
+    const numProduct = multiply(a,b,c);
+    return [numSum[0], numProduct[0], a + ' and ' + b + ' and ' + c + ' sum to ' + numSum[0] + '.','The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + numProduct[0] + '.']    
 }
 
+
+
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply();
 
 
 /////////////////////////////////////
